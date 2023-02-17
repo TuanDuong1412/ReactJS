@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2</title>
+    <style>
+       div{
+        font-size: 1.3rem;
+       }
+   #gender{
+    accent-color: red;
+   }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Thêm sinh viên</h1>
+        <table>
+            <tr>
+                <td>Họ tên</td>
+                <td>
+                    <label for="">
+                        <input type="text" value="Nguyễn Văn An">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td>
+                    <label for="">
+                        <input type="date" name="birthday" id=""value="2000-01-01">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td >
+                     
+                        <input type="radio" name="gender" id="gender" checked="checked" value="Nam">
+                        <label for="gender">Nam</label>
+                    <label for="gender">
+                        <input type="radio" name="gender" id=" gender">Nữ
+                    </label>   
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>Quê quán</td>
+                <td>
+                    <select name="quequan" id="que-quan">
+                        <option value="">An Giang</option>
+                        <option value="">Bắc Giang</option>
+                        <option value="">Hà Nội</option>
+                        <option value="">Sơn La</option>
+                        <option value="">Bắc Ninh</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td>
+                    <input type="text" name="address">
+                </td>
+            </tr>
+            <tr>
+                <td>Sở thích</td>
+                <td>
+                    <label for="">
+                        <input type="checkbox" name="gender" id="gender" >Thể thao
+                    </label>
+                    <label for="">
+                        <input type="checkbox" name="gender" id="gender" checked >Du lịch
+                    </label>
+                    <label for="">
+                        <input type="checkbox" name="gender" id="gender" checked>Phim ảnh
+                    </label>
+                    <label for="">
+                        <input type="checkbox" name="gender" id="gender">Ẩm thực
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Màu yêu thích</td>
+                <td>
+                    <input type="color" name="color" id="color" value="#FF0000"><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" name="email">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Trang Facebook</td>
+                <td>
+                    <input type="text" name="Facebook">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Lớp</td>
+                <td>
+                    <select name="lop" id="lop">
+                        <option value="">Lớp CNTT khóa 8</option>
+                        <option value="">Lớp CNTT khóa 7</option>
+                        <option value="">Lớp CNTT khóa 6</option>
+                        
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Tên đăng nhập</td>
+                <td>
+                    <input type="text" name="tendangnhap">
+                </td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td>
+                    <input type="password" name="password">
+                </td>
+            </tr>
+            <tr>
+                <td>Ảnh thẻ</td>
+                <td>
+                    <input type="file" name="file">
+                    <!-- <button type="submit">Gửi</button> -->
+                </td>
+            </tr>
+            <tr>
+                <td>Mô tả</td>
+                <td>
+                    <textarea id="mota" name="mota" rows="2" cols="25" >Nhập nội vào đây !
+                        
+                     </textarea>
+                        
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Gửi</button>
+                </td>
+                <td>
+                    <button type="reset">Nhập lại</button>  
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
