@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    color: white;
+    background-color: #333;
+    width:100%;
+}
+.navbar>a{
+    padding: 14px;
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+}
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+.content{
+    display: flex;
+    width: 1024px;
+    margin: 0 auto;
+}
+.new-posts{
+    width: 70%;
+    
+}
+.list-category{
+    width:30%;
+   margin-left: 50px;
+}
+.first-post {
+    width: 100%;
+    float: left;
+   
+}
+.first-post img{
+    text-align: center;
+    width: 80%;
+}
