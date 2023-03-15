@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Todo list</h1>
+    <form>
+      <input type="text" placeholder="Add todo" />
+      <button type="submit">Add</button>
+    </form>
+    <ul></ul>
+  </body>
+  <script>
+   
+    const list = []
+    const ulElement = document.querySelector("ul");
+
+    function getTodos() {
+
+      
+      axios
+        .get(`https://jsonplaceholder.typicode.com/todos?_limit=10`)
+        .then(function (res) {
+          todos = res.data;
+          console.log(333,todos);
+          render();
+        });
+    }
+
+    function render() {
+      const liElements = list.map(function (todo) {
+        return `
+          <li>${todo.title}</li>
+        `;
+      });
+
+      ulElement.innerHTML = liElements.join("");
+    }
+
+    getTodos();
+  </script>
+</html>

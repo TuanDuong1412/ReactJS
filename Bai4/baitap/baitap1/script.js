@@ -21,3 +21,18 @@ console.log("Average grade: " + (Avgmarks)/students.length);
         } else if ( 91 <avg < 100) {
                 document.write("Grade : A"); 
 }
+
+switch(true){
+        case 0 < avg && avg < 70:
+                console.log("D");
+                break;
+        case 71 < avg < 80:
+                console.log("C");
+                break;
+        case 81 < avg < 90:
+                console.log("B");
+                break;
+        default:
+                console.log("A");
+                break;
+}

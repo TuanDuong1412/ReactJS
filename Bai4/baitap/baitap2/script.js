@@ -83,3 +83,7 @@ array([1,4,6,7],[3,4,6,8])
 // let num = [5, 4, 7, 2, 8, 7, 3];
 
 // minElement(num);
+function checkarray(array){
+    let min = array[0]
+
+}

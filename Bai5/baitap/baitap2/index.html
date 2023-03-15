@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính lãi suất ngân hàng</title>
+  </head>
+  <body>
+    <div class="content">
+      <form action="">
+        <h2>Nhập thông tin khoản vay</h2>
+        <table>
+          <tr>
+            <td>
+              <label for="">1, Số tiền</label>
+            </td>
+            <td>
+              <input type="text" class="value" id="num1" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="">2, Lãi suất hàng năm(%)</label>
+            </td>
+            <td>
+              <input type="text" class="value" id="num2" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="">3, Thời gian trả(năm)</label>
+            </td>
+            <td>
+              <input type="text" class="value" id="num3" />
+            </td>
+          </tr>
+        </table>
+
+        <button type="submit">Tính</button>
+      </form>
+      <div>
+        <h2>Thông tin thanh toán</h2>
+        <table>
+          <tr>
+            <td>
+              <label for="">4, Số tiền phải trả hàng tháng</label>
+            </td>
+            <td>
+              <input type="text" id="num4" class="value"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="">5, Tổng số tiền phải trả</label>
+            </td>
+            <td>
+              <input type="text" id="num5" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="">6, Tổng số lãi phải trả</label>
+            </td>
+            <td>
+              <input type="text" id="num6" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      let tiengoc = 0;
+      let laisuat = 0;
+      let thoigian = 0;
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const tiengoc = Number(document.getElementById("num1").value);
+        const B = Number(document.getElementById("num2").value);
+        const C = Number(document.getElementById("num3").value);
+        // tiengoc = A.value;
+        laisuat = (B / 100).toFixed(3);
+        thoigian = C * 12;
+        console.log(tiengoc);
+        console.log(laisuat);
+        console.log(thoigian);
+
+        Tinh();
+      });
+      function Tinh() {
+        const moneymonth = document.getElementById("num4");
+        const summoney = document.getElementById("num5");
+        const interestmoney = document.getElementById("num6");
+        let X = Math.pow(1 + laisuat, thoigian);
+        console.log(111, X);
+        moneymonth.value = (tiengoc * X * 1) / (X - 1);
+        console.log(moneymonth.value);
+        // document.getElementById("num4").innerHTML = moneymonth.toFixed(2);
+        summoney.value = moneymonth.value * thoigian;
+        interestmoney.value = summoney.value - tiengoc;
+      }
+
+      function initiaApp() {
+        Tinh();
+      }
+      initiaApp();
+    </script>
+  </body>
+</html>

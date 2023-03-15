@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="welcome">
+      <p>welcom!</p>
+    </div>
+
+    <script>
+      var welcom = document.getElementById("welcome");
+
+      welcom.innerText = "Welcome to JavaScript";
+
+      // Thêm mới phần tử
+      var welcome = document.getElementById("welcome");
+      var horizRule = document.createElement("hr");
+      welcome.appendChild(horizRule);
+
+      var welcome = document.getElementById("welcome");
+      var horizRule = document.createElement("hr");
+      var paragraph = welcome.firstChild;
+      welcome.insertBefore(horizRule, paragraph);
+
+      //Xoa phan tu
+      var welcome = document.getElementById("welcome");
+      var horizRule = welcome.lastChild;
+      welcome.removeChild(horizRule);
+
+      //Cập nhật style của phần tử
+      var welcome = document.getElementById("welcome");
+      welcome.style.color = "white";
+      welcome.style.backgroundColor = "blue";
+      welcom.style.fontSize = "2rem"
+
+      //
+      var element = document.getElementById('welcome');
+
+        function callback() {
+
+            element.innerText = "Nguyeenx Tuan Duong";
+            element.style.color = "black";
+            welcome.style.backgroundColor = "green";
+
+        }
+        // Add listener
+        element.addEventListener('click', callback);
+
+            //
+        var element = document.getElementById('element');
+
+        function callback() {
+
+            element.innerText = "Nguyeenx Tuan Duong";
+            element.style.color = "black";
+
+        element.removeEventListener('click', callback);
+
+        }
+
+        var myEvent = new CustomEvent("myevent", {
+            detail: {
+                name : "wilson"
+            },
+            bubbles : true,
+            cancelable:false
+        });
+
+        //
+        element.addEventListener('myevent', function(event){
+            alert('hello'+ event.detail.name);
+        });
+        re
+document.querySelectorAll()
+        //
+        element.dispatchEvent(myEvent);
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  </body>
+</html>
