@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="selected-item">
+            <div class="image">
+                <img src="" alt="" srcset="">
+            </div>
+            <div class="property">  
+                <div class="property-first">
+                </div>
+                <div class="property-second">
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="item">1.</div>
+            </div>
+        </div>
+    </div>
+    <style>
+
+    </style>
+
+    <script>
+        let pokemon = []
+        const listitem = document.querySelector(".list-item")
+        function fetchingData() {
+            axios.get("https://pokeapi.co/api/v2/pokemon/").then((res)=>{
+                pokemon = res.data.result;
+                render();
+            });
+        }
+
+        function render() {
+            const element = pokemon.map((pokemon, index)=>{
+                return`
+                <div class="item"></div>
+                `
+            })
+        }
+    </script>
+</body>
+</html>

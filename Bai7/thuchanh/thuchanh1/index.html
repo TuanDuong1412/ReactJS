@@ -1,105 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //Làm việc với String
-        let str1 = 'My name is:'  
-        let name = 'Dylan';
+      //Làm việc với String
+      let str1 = "My name is:";
+      let name = "Dylan";
 
-        let str2 = `${str1} ${name}`
-        console.log(str2);
+      let str2 = `${str1} ${name}`;
+      console.log(str2);
 
-        //Destructuring objects //cách lấy phần tử//Đây là cách phá vỡ cấu trúc của một đối tượng và truy xuất các thuộc tính bên trong đối tượng.
-        let information = { 
-            firstName: 'Dylan', 
-            lastName: 'Israel'
-        };
+      //Destructuring objects //cách lấy phần tử//Đây là cách phá vỡ cấu trúc của một đối tượng và truy xuất các thuộc tính bên trong đối tượng.
+      let information = {
+        firstName: "Dylan",
+        lastName: "Israel",
+      };
 
-        let { firstName, lastName } = information;
-        console.log(firstName);
-        console.log(lastName);
+      let { firstName, lastName } = information;
+      console.log(firstName);
+      console.log(lastName);
 
-        //Destructuring array
-        let [ firstName1 ,firstName2] = ['Dylan', 'Israel'];
-        console.log(firstName1,firstName2)
+      //Destructuring array
+      let [firstName1, firstName2] = ["Dylan", "Israel"];
+      console.log(firstName1, firstName2);
 
-        //Object Literal--Đây là cách viết ngắn gọn khi trong một object có cặp key-value cùng tên gọi thì ta không cần viết rõ theo kiểu key: value nữa.
-        let firstNamea = 'Dylan';  
-        let informationa = { firstName };
+      //Object Literal--Đây là cách viết ngắn gọn khi trong một object có cặp key-value cùng tên gọi thì ta không cần viết rõ theo kiểu key: value nữa.
+      let firstNamea = "Dylan";
+      let informationa = { firstName };
 
-        let firstNamb = 'Dylan';  
-        let informationb = {
-             firstName: firstName
-             };
+      let firstNamb = "Dylan";
+      let informationb = {
+        firstName: firstName,
+      };
 
+      //#5 Vòng lặp for… of
+      let str = "hello";
 
-        //#5 Vòng lặp for… of
-        let str = 'hello';
+      for (let char of str) {
+        console.log(char);
+      }
 
-        for (let char of str) { 
-             console.log(char);
-            }
+      //# 6 Spread syntax--Spread syntax dùng để gộp 2 mảng hoặc có thể dùng để làm tham số của function.
+      let arr1 = [1, 2, 3];
+      let arr2 = [4, 5, 6];
+      let arr3 = [...arr1, ...arr2];
+      console.log(arr3);
 
-        //# 6 Spread syntax--Spread syntax dùng để gộp 2 mảng hoặc có thể dùng để làm tham số của function.
-        let arr1 = [1, 2, 3];
-        let  arr2 = [4, 5, 6];
-        let  arr3 = [...arr1, ...arr2];  
-        console.log(arr3);
+      //---với tham số function
+      function findLength(...args) {
+        console.log(args.length);
+      }
 
+      findLength(); // 0
+      findLength(1); // 1
+      findLength(2, 3, 4); // 3
 
-        //---với tham số function
-        function findLength(...args) {  
-            console.log(args.length);
+      //# 7 Arrow Function k dùng đc this khi viết function ngắn gọn
+      const result = (num) => num + num;
+      console.log(result(4));
+
+      //# 8 Includes()--cách để kiếm tra xem 1 chuỗi có thuộc chuỗi còn lại hay không.
+      let str3 = "Hello World";
+      console.log(str3.includes("Hello"));
+
+      //# 9 Class
+      class Car {
+        constructor(wheels, doors) {
+          this.wheels = wheels;
+          this.doors = doors;
         }
-
-        findLength();  // 0
-        findLength(1); // 1
-        findLength(2, 3, 4); // 3
-        
-
-        //# 7 Arrow Function k dùng đc this khi viết function ngắn gọn
-        const result = num => num + num ;
-        console.log(result(4)); 
-
-        //# 8 Includes()--cách để kiếm tra xem 1 chuỗi có thuộc chuỗi còn lại hay không.
-        let str3 = 'Hello World';
-        console.log(str3.includes('Hello'));
-
-        //# 9 Class
-        class Car {
-            constructor(wheels, doors){
-                this.wheels = wheels;
-                this.doors = doors;
-
-            }
-            describeMe(){
-                console.log(`Doors:${this.doors} and Wheels: ${this.wheels}`);
-            }
-
+        describeMe() {
+          console.log(`Doors:${this.doors} and Wheels: ${this.wheels}`);
         }
-        const car1 = new Car(4,2)
-        car1.describeMe(); 
+      }
+      const car1 = new Car(4, 2);
+      car1.describeMe();
 
-
-        //# 10 Promise, async và await
-        function takeLongTimeAsync() {
-            return new Promise(resolve => {
-            setTimeout(() => resolve("long_time_value"), 1000);
+      //# 10 Promise, async và await
+      function takeLongTimeAsync() {
+        return new Promise((resolve) => {
+          setTimeout(() => resolve("long_time_value"), 1000);
         });
-        }
+      }
 
-        async function test() {
-            const v = await takeLongTimeAsync();
-            console.log(v);
-        }
+      async function test() {
+        const v = await takeLongTimeAsync();
+        console.log(v);
+      }
 
-        test();
+      test();
     </script>
-</body>
+  </body>
 </html>

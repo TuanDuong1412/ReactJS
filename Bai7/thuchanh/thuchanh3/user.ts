@@ -33,7 +33,7 @@ class User {
         return false;
     }
 };
-class Author extends User {
+class author extends User {
     numOfPost: number;
     email: string;
     constructor(email: string, name: string, username: string, password: string) {
@@ -51,12 +51,13 @@ class Author extends User {
     }
 }
 
-let author1 = new Author('ex@gmail.com', 'author1', 'author1', '1234567');
+let author11 = new Author('ex@gmail.com', 'author1', 'author1', '1234567');
 console.log(author1.email);
-author1.login('author1', '1234567');
+author.login('author1', '1234567');
 
-let user1 = new User('user1', 'user1', '123456');
+let user = new User('user1', 'user1', '123456');
 
 console.log(user1.username);
 user1.login('user1', '123456')
 user1.setPassword('12')
+//console.log(user1.name) Erro Property 'name' is private and only accessible within class 'User'
