@@ -7,10 +7,9 @@ let stocks = {
 
 
 // Function 1
-    let order = (fruit_name, call_production) =>{
-    call_production();
-  };
-
+let order = (fruit_name, call_production) =>{
+  call_production();
+};
 
   let production = () =>{
 
